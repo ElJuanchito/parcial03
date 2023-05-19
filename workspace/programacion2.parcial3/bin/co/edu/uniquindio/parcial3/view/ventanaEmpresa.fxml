@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial3.controllers.EmpresaController" />
+<BorderPane id="root" prefHeight="600.0" prefWidth="800.0" stylesheets="@empresa.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TabPane id="TabPane" stylesheets="@empresa.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab styleClass="tabs" text="Facturacion">
+            <content>
+              	<fx:include fx:id="ventanaFactura" source="ventanaFactura.fxml" />
+            </content>
+          </Tab>
+          <Tab styleClass="tabs" text="Registro">
+            <content>
+              <fx:include fx:id="ventanaClientes" source="ventanaClientes.fxml" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

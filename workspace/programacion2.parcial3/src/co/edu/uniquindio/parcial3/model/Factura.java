@@ -1,20 +1,32 @@
 package co.edu.uniquindio.parcial3.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-import javafx.util.converter.LocalDateStringConverter;
-
-public class Factura {
+public class Factura implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String codigo;
 	private LocalDate fechaFacturacion;
 	private Double totalPagar;
 	private Atendible cliente;
-	
+
+	/**
+	 * Este es el constructor base de la clase <code>Factura</code>
+	 */
 	public Factura() {
 	}
 
+	/**
+	 * Constructor de la clase <code>Factura</code> que recibe parametros para la creacion de la instancia.
+	 * @param codigo
+	 * @param fechaFacturacion
+	 * @param totalPagar
+	 * @param cliente
+	 */
 	public Factura(String codigo, LocalDate fechaFacturacion, Double totalPagar, Atendible cliente) {
 		this.codigo = codigo;
 		this.fechaFacturacion = fechaFacturacion;
@@ -77,11 +89,46 @@ public class Factura {
 				+ ", cliente =" + cliente + "]";
 	}
 
+	/**
+	 * Verifica si el cliente y la fecha son iguales a las ingresadas por parametro.
+	 * @param fecha
+	 * @param cliente
+	 * @return
+	 */
 	public boolean coincideFechaCliente(LocalDate fecha, Atendible cliente) {
 		return this.fechaFacturacion.isEqual(fecha) && this.cliente.equals(cliente);
 	}
 	
+	/**
+	 * Retorna el valor String de la fecha(<code>LocalDate</code>).
+	 * @return
+	 */
+	public String getFecha() {
+		return this.fechaFacturacion.toString();
+	}
 	
+	/**
+	 * Retorna el id del cliente. Puede ser Juridico o Natural.
+	 * @return
+	 */
+	public String getClienteId() {
+		return this.cliente.getId();
+	}
 	
+	/**
+	 * Retorna el valor String del total al pagar(<code>Double</code>).
+	 * @return
+	 */
+	public String getTotal() {
+		return totalPagar.toString();
+	}
 	
+	/**
+	 * Retorna el nombre del cliente.
+	 * @return
+	 */
+	public String getClienteNombre() {
+		return cliente.getNombre();
+	}
+
 }

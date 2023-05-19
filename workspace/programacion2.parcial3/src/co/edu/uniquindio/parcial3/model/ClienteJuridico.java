@@ -1,18 +1,34 @@
 package co.edu.uniquindio.parcial3.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class ClienteJuridico implements Atendible {
+public class ClienteJuridico implements Atendible, Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nit;
 	private String nombre;
 	private String telefono;
 	private TipoEmpresa tipoEmpresa;
 
-	public ClienteJuridico() {
+	/**
+	 * Este es el constructor base de la clase <code>ClienteJuridico</code>
+	 */
+	private ClienteJuridico() {
 	}
 
+	/**
+	 * Constructor de la clase Cliente Juridico
+	 * @param nit
+	 * @param nombre
+	 * @param telefono
+	 * @param tipoEmpresa
+	 */
 	public ClienteJuridico(String nit, String nombre, String telefono, TipoEmpresa tipoEmpresa) {
+		this();
 		this.nit = nit;
 		this.nombre = nombre;
 		this.telefono = telefono;
@@ -27,6 +43,7 @@ public class ClienteJuridico implements Atendible {
 		this.nit = nit;
 	}
 
+	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -75,14 +92,21 @@ public class ClienteJuridico implements Atendible {
 	}
 
 	@Override
-	public Atendible buscarCliente(String id) {
-		// TODO
-		return null;
+	public String getId() {
+		return this.nit;
 	}
 
 	@Override
-	public String getId() {
-		return this.nit;
+	public String getTipoCliente() {
+		return "Juridico";
+	}
+	
+	/**
+	 * Retorna el tipo de la empresa ya sea "PRIVADA" o "PUBLICA".
+	 * @return
+	 */
+	public String getTipo() {
+		return tipoEmpresa.getTipo();
 	}
 
 }

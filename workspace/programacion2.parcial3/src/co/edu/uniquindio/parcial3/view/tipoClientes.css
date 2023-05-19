@@ -1,0 +1,25 @@
+#root{
+	-fx-background-color: black;
+}
+
+#titulo{
+	-fx-font-size: 2em;
+}
+
+.texto{
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-size: 1.5em;
+}
+
+.cajas{
+	-fx-background-radius: 1em;
+	-fx-border-radius: 1em;
+}
+
+.botones{
+	-fx-font-weight: bold;
+	-fx-background-color: white;
+	-fx-font-size: 1em;
+	-fx-padding: 0.5em 1em;
+}

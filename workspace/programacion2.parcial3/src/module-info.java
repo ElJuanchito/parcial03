@@ -1,6 +1,10 @@
 module programacion2.parcial3 {
 	requires javafx.controls;
 	requires javafx.fxml;
+	requires javafx.base;
+	requires javafx.graphics;
+	requires java.desktop;
+	requires java.sql;
 	
 	exports co.edu.uniquindio.parcial3.controllers to javafx.fxml;
 	

@@ -1,17 +1,32 @@
 package co.edu.uniquindio.parcial3.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class ClienteNatural implements Atendible {
+public class ClienteNatural implements Atendible, Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private String apellidos;
 	private String cedula;
 	private Integer estrato;
 
+	/**
+	 * Este es el constructor base de la clase <code>ClienteNatural</code>
+	 */
 	public ClienteNatural() {
 	}
 
+	/**
+	 * Constructor de la clase <code>ClienteNatural</code> que recibe parametros para crear la instancia.
+	 * @param nombre
+	 * @param apellidos
+	 * @param cedula
+	 * @param estrato
+	 */
 	public ClienteNatural(String nombre, String apellidos, String cedula, Integer estrato) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -19,6 +34,7 @@ public class ClienteNatural implements Atendible {
 		this.estrato = estrato;
 	}
 
+	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -75,14 +91,13 @@ public class ClienteNatural implements Atendible {
 	}
 
 	@Override
-	public Atendible buscarCliente(String id) {
-		// TODO
-		return null;
+	public String getId() {
+		return this.cedula;
 	}
 
 	@Override
-	public String getId() {
-		return this.cedula;
+	public String getTipoCliente() {
+		return "Natural";
 	}
 
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane id="root" fx:id="ventanaClientes" onMouseMoved="#actualizar" stylesheets="@clientes.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial3.controllers.ClientesController">
+   <bottom>
+      <TableView fx:id="tabla" onMouseEntered="#actualizar" prefHeight="250.0" prefWidth="800.0" stylesheets="@clientes.css" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colNombres" prefWidth="266.0" styleClass="columnas" text="Nombre" />
+          <TableColumn fx:id="colIds" prefWidth="266.0" styleClass="columnas" text="Cedula/Nit" />
+            <TableColumn fx:id="colTipos" prefWidth="266.0" styleClass="columnas" text="TipoCliente" />
+        </columns>
+      </TableView>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="800.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton fx:id="btnJuridico" mnemonicParsing="false" onAction="#btnJuridicoAction" styleClass="radios" stylesheets="@clientes.css" text="ClienteJuridico" />
+            <RadioButton fx:id="btnNatural" mnemonicParsing="false" onAction="#btnNaturalAction" styleClass="radios" stylesheets="@clientes.css" text="ClienteNatural" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox fx:id="gestionClientes" prefHeight="300.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

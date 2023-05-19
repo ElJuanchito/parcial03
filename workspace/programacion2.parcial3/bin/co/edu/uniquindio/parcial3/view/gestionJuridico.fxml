@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="root" fx:id="gestionJuridico" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" stylesheets="@tipoClientes.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial3.controllers.CJuridicoController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="800.0">
+         <children>
+            <Label id="titulo" styleClass="texto" stylesheets="@tipoClientes.css" text="Datos del cliente jurido" />
+         </children>
+      </HBox>
+      <HBox prefHeight="60.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+               <children>
+                  <Label styleClass="texto" stylesheets="@tipoClientes.css" text="Nit:" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <TextField fx:id="txtNit" styleClass="cajas" stylesheets="@tipoClientes.css">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="50.0" right="50.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="60.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+               <children>
+                  <Label styleClass="texto" stylesheets="@tipoClientes.css" text="Nombre:" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+               <children>
+                  <TextField fx:id="txtNombre" styleClass="cajas" stylesheets="@tipoClientes.css">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="50.0" right="50.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="60.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+               <children>
+                  <Label styleClass="texto" stylesheets="@tipoClientes.css" text="Telefono:" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+               <children>
+                  <TextField fx:id="txtTelefono" styleClass="cajas" stylesheets="@tipoClientes.css">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="50.0" right="50.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="60.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+               <children>
+                  <Label styleClass="texto" stylesheets="@tipoClientes.css" text="Tipo de empresa:" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+               <padding>
+                  <Insets left="50.0" right="50.0" />
+               </padding>
+               <children>
+                  <ComboBox fx:id="cbTipoEmpresa" prefWidth="150.0" promptText="Seleccione" styleClass="botones" stylesheets="@tipoClientes.css" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="68.0" prefWidth="800.0" spacing="80.0">
+         <children>
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarEvent" styleClass="botones" stylesheets="@tipoClientes.css" text="Agregar" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarEvent" styleClass="botones" stylesheets="@tipoClientes.css" text="Eliminar" />
+            <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizarEvent" styleClass="botones" stylesheets="@tipoClientes.css" text="Actualizar" />
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarEvent" styleClass="botones" stylesheets="@tipoClientes.css" text="Buscar" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

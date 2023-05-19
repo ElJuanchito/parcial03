@@ -1,0 +1,11 @@
+#root{
+	-fx-background-color: black;
+}
+
+.tabs {
+	-fx-background-color: black;
+}
+.tab-label {
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}

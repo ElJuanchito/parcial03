@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane id="root" fx:id="ventanaFactura" prefHeight="704.0" prefWidth="884.0" stylesheets="@factura.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial3.controllers.FacturaController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label id="titulo" styleClass="texto" stylesheets="@factura.css" text="Datos de la factura" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+                     <children>
+                        <Label id="txtCodigo" styleClass="texto" stylesheets="@factura.css" text="Codigo:" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <TextField fx:id="txtCodigo" styleClass="cajas" stylesheets="@factura.css">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="60.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+                     <children>
+                        <Label styleClass="texto" stylesheets="@factura.css" text="Fecha de facturacion:" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                     <children>
+                        <DatePicker fx:id="fechaPicker" editable="false" maxWidth="1.7976931348623157E308" stylesheets="@factura.css" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="125.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+                     <children>
+                        <Label styleClass="texto" stylesheets="@factura.css" text="Total a pagar:" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+                     <children>
+                        <TextField fx:id="txtPagar" styleClass="cajas" stylesheets="@factura.css">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="157.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+                     <children>
+                        <Label styleClass="texto" stylesheets="@factura.css" text="Cedula o nit del cliente:" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="400.0">
+                     <children>
+                        <TextField fx:id="txtId" prefHeight="25.0" prefWidth="310.0" styleClass="cajas" stylesheets="@factura.css">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+           <HBox alignment="CENTER" prefHeight="56.0" prefWidth="884.0" spacing="80.0">
+               <children>
+                  <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarEvent" styleClass="botones" stylesheets="@factura.css" text="Agregar" />
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarEvent" styleClass="botones" stylesheets="@factura.css" text="Eliminar" />
+                  <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarEvent" styleClass="botones" stylesheets="@factura.css" text="Buscar" />
+               </children>
+      </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView id="tabla" fx:id="tablaFacturas" onMouseClicked="#tablaEvent" prefWidth="4000.0" stylesheets="@factura.css" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="160.0" styleClass="columnas" text="Codigo" />
+          <TableColumn fx:id="colFecha" prefWidth="160.0" styleClass="columnas" text="FechaFacturacion" />
+            <TableColumn fx:id="colPagar" prefWidth="160.0" styleClass="columnas" text="TotalPagar" />
+            <TableColumn fx:id="colCliente" prefWidth="160.0" styleClass="columnas" text="Cliente" />
+            <TableColumn fx:id="colClienteId" prefWidth="160.0" styleClass="columnas" text="IdCliente" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
